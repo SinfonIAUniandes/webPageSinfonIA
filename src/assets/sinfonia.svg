@@ -5,7 +5,7 @@
   <style>
     @keyframes trace-border {
       from {
-        stroke-dashoffset: 1;
+        stroke-dashoffset: 1.01;
       }
       to {
         stroke-dashoffset: 0;
@@ -23,26 +23,26 @@
 
     .wordmark {
       fill-opacity: 0;
-      animation: fill-in 0.25s linear 4.5s both;
+      animation: fill-in 0.083333s linear 1.5s both;
     }
 
     .border {
       fill: none;
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      stroke-linecap: round;
+      stroke-dasharray: 1.01;
+      stroke-dashoffset: 1.01;
+      stroke-linecap: butt;
       stroke-linejoin: round;
-      animation: trace-border 1s ease-in both;
+      animation: trace-border 0.333333s ease-in both;
     }
 
     .border-1 { animation-delay: 0s; }
-    .border-2 { animation-delay: 0.5s; }
-    .border-3 { animation-delay: 1s; }
-    .border-4 { animation-delay: 1.5s; }
-    .border-5 { animation-delay: 2s; }
-    .border-6 { animation-delay: 2.5s; }
-    .border-7 { animation-delay: 3s; }
-    .border-8 { animation-delay: 3.5s; }
+    .border-2 { animation-delay: 0.166667s; }
+    .border-3 { animation-delay: 0.333333s; }
+    .border-4 { animation-delay: 0.5s; }
+    .border-5 { animation-delay: 0.666667s; }
+    .border-6 { animation-delay: 0.833333s; }
+    .border-7 { animation-delay: 1s; }
+    .border-8 { animation-delay: 1.166667s; }
 
     @media (prefers-reduced-motion: reduce) {
       .wordmark {
