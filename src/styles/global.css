@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -5,4 +6,22 @@
     --red: rgb(219,62,59);
     --blue: rgb(32,35,161);
     --yellow: rgb(196,197,81);
+}
+
+html {
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav a {
+    font-family: "Montserrat", sans-serif;
 }

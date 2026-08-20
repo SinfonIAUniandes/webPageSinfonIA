@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Loading from '../components/Loading.astro';
+import SiteNav from '../components/SiteNav.astro';
+import sinfoniaLogo from '../assets/sinfonia.svg';
+---
+
+<Layout>
+  <main class="experiments-page">
+    <header>
+      <p class="eyebrow">Sinfonia</p>
+      <h1>Experiments</h1>
+      <p class="intro">A private space for visual and motion studies.</p>
+    </header>
+
+    <section class="experiment" aria-labelledby="loading-title">
+      <div>
+        <p class="eyebrow">Experiment</p>
+        <h2 id="loading-title">Loading</h2>
+      </div>
+      <Loading size="8rem" />
+    </section>
+
+    <section class="experiment experiment--navigation" aria-labelledby="navigation-title">
+      <div class="experiment-heading">
+        <div>
+          <p class="eyebrow">Experiment</p>
+          <h2 id="navigation-title">Brush navigation</h2>
+        </div>
+        <p class="experiment-note">Blue and lavender passes behind the wordmark.</p>
+      </div>
+
+      <div class="navigation-preview">
+        <SiteNav />
+        <img class="navigation-preview__logo" src={sinfoniaLogo.src} alt="SINFONiA wordmark preview" />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .experiments-page {
+    min-height: 100svh;
+    box-sizing: border-box;
+    padding: 3rem clamp(1.5rem, 5vw, 5rem);
+    color: var(--grey);
+    background: #fff;
+  }
+
+  header,
+  .experiment {
+    width: min(100%, 56rem);
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--red);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    margin-bottom: 0.75rem;
+    color: var(--blue);
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    line-height: 0.95;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    color: var(--grey);
+    font-size: 1.5rem;
+  }
+
+  .intro {
+    margin-bottom: 0;
+    color: var(--grey);
+    font-size: 1rem;
+  }
+
+  .experiment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 18rem;
+    box-sizing: border-box;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid rgb(91 90 96 / 18%);
+    border-radius: 1.5rem;
+  }
+
+  .experiment--navigation {
+    display: block;
+  }
+
+  .experiment-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .experiment-note {
+    max-width: 18rem;
+    margin-bottom: 0;
+    color: var(--grey);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  .navigation-preview {
+    position: relative;
+    min-height: 13rem;
+    overflow: hidden;
+    isolation: isolate;
+    --site-nav-width: 100%;
+    --logo-settle-end: 0s;
+    background: linear-gradient(135deg, rgb(245 249 250) 0%, rgb(249 246 251) 100%);
+  }
+
+  .navigation-preview__logo {
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    width: clamp(132px, 18vw, 168px);
+    z-index: 3;
+    transform: translateX(-50%);
+    filter: grayscale(1) brightness(0);
+  }
+
+  @media (max-width: 36rem) {
+    .experiment-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .experiment-note {
+      text-align: left;
+    }
+
+    .experiment {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+</style>
